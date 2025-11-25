@@ -1,30 +1,48 @@
 # Physics-Informed Neural Networks for Nonlinear PDEs
 
-*Ongoing Project — Full Code Release on **1st December***
+This repository contains implementations of **Physics-Informed Neural Networks (PINNs)** for solving several nonlinear and high-dimensional PDEs. The project includes experiments on smooth, discontinuous, and vector-valued systems, along with saved models and a full project report.
 
-This repository hosts an ongoing project exploring the use of **Physics-Informed Neural Networks (PINNs)** to solve **nonlinear Partial Differential Equations (PDEs)**. The goal is to build reliable neural solvers for challenging physical systems where traditional numerical methods struggle, especially near shocks, discontinuities, and stiff regimes.
-
-The first version of the code—including training scripts, model architectures, baselines, and experiment results—will be uploaded by **1st December**.
 ---
 
-## 🔬 Project Overview
+## 📂 Repository Structure
 
-This project explores the use of **Physics-Informed Neural Networks (PINNs)** to solve nonlinear and high-dimensional physical systems. The current focus is on three PDE models:
+* **`PINN_code/PINN_s/`** — All PINN training scripts, model definitions, and experiment code
+* **`NN_Models/NN_Models/`** — Saved neural-network models with short notes on each run
+* **`Btech_Project_Report.pdf`** — Full project report summarizing methods, results, and analysis 
 
-* **Burgers’ Equation** — used as a baseline to validate the PINN framework
-* **Riemann Problem** — solving for density and velocity evolution with shock formation
-* **Kinematic Dynamo Equation** — modeling magnetic field evolution in conducting fluids
-
-The implementation includes:
-
-* Formulating the governing PDEs, initial conditions, and boundary conditions directly into the loss function
-* Using automatic differentiation to compute exact PDE residuals
-* Training PINNs to recover smooth as well as discontinuous dynamics
-* Comparing model predictions with analytical or numerical reference solutions
 ---
 
-## 📅 Expected Release
+## 🔬 PDEs Implemented
 
-The full project (source code, plots, trained models, and documentation) will be published by:
+The project explores PINNs on multiple systems of increasing difficulty:
 
-**📌 Release Date: 1st December**
+* **Burgers’ Equation** — baseline test for nonlinear advection–diffusion
+* **Riemann Problem** — studying shock formation and activation-function effects
+* **3D Heat Equation** — scaling PINNs to four input dimensions
+* **Kinematic Dynamo (2D & 3D)** — testing PINN limits on vector-valued, curl-driven PDEs
+
+Each model encodes the governing PDE, initial conditions, and boundary conditions directly into a composite loss function using automatic differentiation (PyTorch).
+
+---
+
+## 🧠 Key Features
+
+* Fully connected PINN architectures in PyTorch
+* PDE residuals computed via automatic differentiation
+* Adam + L-BFGS training pipeline
+* Experiments comparing different activations, sampling strategies, and loss weights
+* Saved models for reproducibility and further exploration
+
+---
+
+## 📘 Report
+
+The full project report (methods, equations, figures, and detailed analysis) is included as:
+
+**`Btech_Project_Report.pdf`** 
+
+---
+
+## 📌 Status
+
+All code, results, and models are now uploaded. Future updates may include improved architectures (FNOs, spectral PINNs) and extended kinematic dynamo experiments.
